@@ -22,8 +22,6 @@
         const winRow = []
         function toggleMarked(cell,letter,cellValue) {
             
-            // console.log(cell)
-            // var ball = document.getElementById('label1').value.slice(2)
                     
             if(listBallOut.includes(cellValue)){
                 cell.classList.toggle('marked');
@@ -98,40 +96,18 @@
     </script>
 </head>
 <body>
- <!-- <button id="ball" value="">Click to Generate Number</button> -->
+
 <?php
 function generateBingoNumber($column,$minRange,$maxRange) {
     
     return rand($minRange, $maxRange);
 
 }
-// function generateBingoBall() {
-//     $randomNumber = rand(1,85);
-//     $letter = '';
-    
-  
-//     if ($randomNumber >= 1 && $randomNumber <= 25) {
-//       $letter = 'B';
-//     } else if ($randomNumber >= 26 && $randomNumber <= 40) {
-//       $letter = 'I';
-//     } else if ($randomNumber >= 41 && $randomNumber <= 55) {
-//       $letter = 'N';
-//     } else if ($randomNumber >= 56 && $randomNumber <= 70) {
-//       $letter = 'G';
-//     } else if ($randomNumber >= 71 && $randomNumber <= 85) {
-//       $letter = 'O';
-//     }
-  
-//     return $letter.'-'.$randomNumber;
-// }
 
-// $ball = generateBingoBall();
 
 $bingoCard = array();
 $minColRange = array(1,26,41,56,71);
 $maxColRange = array(25,40,55,70,85);
-// $minColRange = array(1,8,15,22,29);
-// $maxColRange = array(7,14,21,28,35);
 for ($col = 1; $col <= 5; $col++) {
     $bingoColumn = array();
     
