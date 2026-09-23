@@ -4,6 +4,8 @@ const nextConfig = {
   output: 'export',
   // Next.js image optimization needs a server; Pages has none.
   images: { unoptimized: true },
+  // Export each route as a folder with index.html so /path and /path/ both work.
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
