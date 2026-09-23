@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Retro desktop (home page). Classic 3D bevels are layered box-shadows. */
+/* ------------------------------------------------------------------ */
+
+@layer components {
+  .win98 {
+    font-family: Tahoma, "MS Sans Serif", "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    color: #000;
+  }
+
+  .win-raised {
+    background: #c0c0c0;
+    box-shadow:
+      inset -1px -1px #0a0a0a,
+      inset 1px 1px #ffffff,
+      inset -2px -2px #808080,
+      inset 2px 2px #dfdfdf;
+  }
+
+  .win-sunken {
+    box-shadow:
+      inset -1px -1px #ffffff,
+      inset 1px 1px #808080,
+      inset -2px -2px #dfdfdf,
+      inset 2px 2px #0a0a0a;
+  }
+
+  .win-field {
+    background: #ffffff;
+    box-shadow:
+      inset -1px -1px #ffffff,
+      inset 1px 1px #808080,
+      inset -2px -2px #dfdfdf,
+      inset 2px 2px #0a0a0a;
+  }
+
+  .win-status {
+    box-shadow:
+      inset -1px -1px #dfdfdf,
+      inset 1px 1px #808080;
+  }
+
+  .win-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 75px;
+    min-height: 23px;
+    padding: 3px 12px;
+    background: #c0c0c0;
+    color: #000;
+    box-shadow:
+      inset -1px -1px #0a0a0a,
+      inset 1px 1px #ffffff,
+      inset -2px -2px #808080,
+      inset 2px 2px #dfdfdf;
+  }
+
+  .win-button:active,
+  .win-button-pressed {
+    box-shadow:
+      inset -1px -1px #ffffff,
+      inset 1px 1px #0a0a0a,
+      inset -2px -2px #dfdfdf,
+      inset 2px 2px #808080;
+  }
+
+  .win-button:focus-visible {
+    outline: 1px dotted #000;
+    outline-offset: -4px;
+  }
+
+  .win-title-button {
+    display: grid;
+    place-items: center;
+    width: 16px;
+    height: 14px;
+    background: #c0c0c0;
+    box-shadow:
+      inset -1px -1px #0a0a0a,
+      inset 1px 1px #ffffff,
+      inset -2px -2px #808080,
+      inset 2px 2px #dfdfdf;
+  }
+
+  .win-title-button:active {
+    box-shadow:
+      inset -1px -1px #ffffff,
+      inset 1px 1px #0a0a0a,
+      inset -2px -2px #dfdfdf,
+      inset 2px 2px #808080;
+  }
+
+  .win-titlebar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: #ffffff;
+  }
+
+  .win-titlebar-inactive {
+    background: linear-gradient(90deg, #808080, #b5b5b5);
+    color: #dfdfdf;
+  }
+
+  .win-groupbox {
+    margin: 0;
+    padding: 10px 12px 12px;
+    border: 2px groove #f4f4f4;
+  }
+
+  .win-groupbox > legend {
+    padding: 0 4px;
+  }
+
+  .win-separator {
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  /* Checkerboard used for the active taskbar button. */
+  .win-dither {
+    background-color: #ffffff;
+    background-image: repeating-conic-gradient(#c0c0c0 0% 25%, #ffffff 0% 50%);
+    background-size: 2px 2px;
+  }
+
+  .win-tab {
+    position: relative;
+    padding: 3px 10px 4px;
+    background: #c0c0c0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    box-shadow:
+      inset 1px 1px #ffffff,
+      inset 2px 2px #dfdfdf,
+      inset -1px 0 #0a0a0a,
+      inset -2px 0 #808080;
+  }
+
+  .win-tab[aria-selected="true"] {
+    z-index: 1;
+    margin: -2px -2px 0;
+    padding-bottom: 6px;
+  }
+
+  .win-tab:focus-visible {
+    outline: 1px dotted #000;
+    outline-offset: -4px;
+  }
+
+  .win98 ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  .win98 ::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    background-image: repeating-conic-gradient(#c0c0c0 0% 25%, #ffffff 0% 50%);
+    background-size: 2px 2px;
+  }
+
+  .win98 ::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    box-shadow:
+      inset -1px -1px #0a0a0a,
+      inset 1px 1px #ffffff,
+      inset -2px -2px #808080,
+      inset 2px 2px #dfdfdf;
+  }
+}
